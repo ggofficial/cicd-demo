@@ -22,12 +22,12 @@ pipeline {
         stage('Login to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(
-                    credentialsId: '1556c8e6-2f51-4406-b0f2-c9af9d8a171a',
+                    credentialsId: 'dockerhub',
                     usernameVariable: 'ggofficial',
                     passwordVariable: 'Syncmaster@773s'
                 )]) {
 
-                    sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
+                    sh 'echo $DOCKER_PASS | docker login -u ggofficial --password-stdin'
                 }
             }
         }
